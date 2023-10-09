@@ -1,0 +1,37 @@
+{
+  "name": "dev/ganho-de-capital",
+  "description": "Code Challenge: Ganho de Capital",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Marcos Ramos",
+      "email": "mjramosfsa@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.6",
+    "phpunit/phpunit": "^9.5",
+    "symfony/var-dumper": "^6.0"
+  },
+  "scripts": {
+    "psr12": [
+      "vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR12 --extensions=php,inc,lib source/",
+      "vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR12 --extensions=php,inc,lib tests/"
+    ],
+    "tests": "vendor/phpunit/phpunit/phpunit -c tests/phpunit.unit.xml --no-coverage"
+  }
+}
